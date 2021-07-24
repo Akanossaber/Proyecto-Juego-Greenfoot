@@ -20,7 +20,7 @@ public class disparo extends Actor
         matar();
       // Add yo code here.
     }
-    public void trayectoria()
+    public void trayectoria()//este es para que se ponga el rombo en la posicion del usuario
     {
        setLocation(getX(),getY()-5); 
     }
@@ -28,7 +28,7 @@ public class disparo extends Actor
     {
        
   
-        Actor Enemigo= getOneIntersectingObject(Enemigo.class);
+        Actor Enemigo= getOneIntersectingObject(Enemigo.class);// aqui es basicamente para que al momento de que el rombo tope con el dibujo del enemigo, el enemigo desaparezca
         if (Enemigo !=null)
         {
             getWorld().removeObject(Enemigo);

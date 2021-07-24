@@ -14,9 +14,9 @@ public class Enemigo1 extends Enemigo
      */
     public Enemigo1()
     {
-        setRotation(90);
+        setRotation(90);// aqui estoy cambiandole la rotacion, por que si no sale para el lado y no se ve bien
     }
-    public void act()
+    public void act()//aqui le doy las instrucciones de lo que puede hacer al momento de actuar o que se ejecute el programa
     {
         moveEnemigo();
         matar();
