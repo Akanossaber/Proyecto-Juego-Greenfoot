@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+
     int contador=0;//declaro el contador para los enemigos
     /**
      * Constructor for objects of class MyWorld.
@@ -18,24 +19,34 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 700, 1); 
         prepare();//aqui es para preparar el mundo 
+        
     }
+    
     public void act()//este es para que la cantidad de enemigos generados no sea tan rapida, ya que si no generaria enemigos de forma mas acelerada
     {
         contador++;
-        if(contador>45)
+        if(contador>25)
         {    
             addEnemigo1();
+            
             contador=0;
         }
     }
     public void addEnemigo1()//aqui se encarga de generar enemigos de manera aleatoria
     {
         addObject(new Enemigo1(), Greenfoot.getRandomNumber(600),0);
+        
     }
-    private void prepare()//esto es para que yo no tenga que poner a la Remu cada vez que lo testeo, si no que la coloca en la posicion que le di.
+
+    private void prepare()//esto es para que yo no tenga que poner a la Remu cada vez que lo testeo, si no que la coloca en la posicion que le di. ademas coloca a los jefes y a la barra de puntucaicon
     {
         Remu player= new Remu();
         addObject(player,252,510);
         player.setLocation(270,491);
+        Puntos puntos = new Puntos();
+        addObject(puntos,53,55);
+        jefe jefe =new jefe();
+        addObject(jefe,281,40);
+        
     }
 }

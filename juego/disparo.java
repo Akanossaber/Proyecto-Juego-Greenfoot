@@ -16,25 +16,33 @@ public class disparo extends Actor
     {
         
         trayectoria();
+        desaparecer();
         
-        matar();
+        //matar();
       // Add yo code here.
     }
     public void trayectoria()//este es para que se ponga el rombo en la posicion del usuario
     {
        setLocation(getX(),getY()-5); 
-    }
-    public void matar()
-    {
+    }//como ya no quise matar al enemigo, solo comente esta parte
+    // public void matar()
+    // {
        
   
-        Actor Enemigo= getOneIntersectingObject(Enemigo.class);// aqui es basicamente para que al momento de que el rombo tope con el dibujo del enemigo, el enemigo desaparezca
-        if (Enemigo !=null)
-        {
-            getWorld().removeObject(Enemigo);
-            getWorld().removeObject(this);
-        }
-        else if (getY()==0)
+        // Actor Enemigo= getOneIntersectingObject(Enemigo.class);// aqui es basicamente para que al momento de que el rombo tope con el dibujo del enemigo, el enemigo desaparezca
+        // if (Enemigo !=null)
+        // {
+            // getWorld().removeObject(Enemigo);
+            // getWorld().removeObject(this);
+        // }
+        // else if (getY()==0)
+        // {
+            // getWorld().removeObject(this);
+        // }
+    // }
+    public void desaparecer()
+    {
+        if(getY()==1)//esto es para que desaparezcan cuando llegue al final del mapa se borren y no se acumulen
         {
             getWorld().removeObject(this);
         }

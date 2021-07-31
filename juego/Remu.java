@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Remu extends Actor
 {
+    int vida;
+    boolean tiro = true;
     /**
      * Act - do whatever the Remu wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,6 +19,7 @@ public class Remu extends Actor
     {
         moveAround();
         Disparar();
+        
     }
     public void moveAround()// para que se mueva de lado a lado.
     {
@@ -33,9 +36,17 @@ public class Remu extends Actor
     }
     public void Disparar()//aqui es para que dispare
     {
-        if(Greenfoot.isKeyDown("x"))//cuando presione la tecla X va a salir el rombo
+        if(Greenfoot.isKeyDown("x")&& tiro==true)//cuando presione la tecla X va a salir el rombo
         {
-            getWorld().addObject(new disparo(),getX(),getY()-75);// y el disparo va a salir a una distancia de 75 respecto a mi actor
+            getWorld().addObject(new disparo(),getX(),getY()-75 );
+            tiro= false;// y el disparo va a salir a una distancia de 75 respecto a mi actor
         }
+        else if (!Greenfoot.isKeyDown("x"))// esto es para que no se tenga que apachar la barra para que dispare si no que se levante tambien 
+        {
+            tiro=true;
+            
+        }
+    
     }
-}
+    
+            }

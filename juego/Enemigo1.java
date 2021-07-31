@@ -19,7 +19,21 @@ public class Enemigo1 extends Enemigo
     public void act()//aqui le doy las instrucciones de lo que puede hacer al momento de actuar o que se ejecute el programa
     {
         moveEnemigo();
+        bloquear();
         matar();
-    }
-    
-}
+        
+     }
+    public void bloquear()// estableciendo el metodo para que bloquee los disparos
+     {
+       
+  
+         Actor disparo= getOneIntersectingObject(disparo.class);// esto es para que cuando el enemigo tope con el rombo, el rombo desaparezca
+         if (disparo !=null)
+         {
+            getWorld().removeObject(disparo);
+                     }
+         
+         }
+     }
+
+
